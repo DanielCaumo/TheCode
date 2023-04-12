@@ -1,4 +1,5 @@
 Protótipo: https://www.figma.com/file/C0Y1bxUNz7yDWbduRNc1RP/TheCode?node-id=0-1&t=GYOMB5pIqJEn1iVi-0
+Entrega: 25/04/2023
 
 1. Breve apresentação do aplicativo
 Titulo:TheCode 
@@ -11,6 +12,7 @@ Titulo:TheCode
     artigo https://artigo.app/
 
 4.Mapa de Empatia (Tiago)
+https://www.alura.com.br/artigos/guia-pratico-como-montar-mapa-empatia?gclid=CjwKCAjwitShBhA6EiwAq3RqA4flddhaSsuLgWS1cIiZoRtYMJg27jaE3B562ir2O7elLelLbA_W-BoCn4IQAvD_BwE
     O que o usuário pensa e sente?
         O que ele quer de verdade?
         O que não quer de forma nenhuma?
@@ -86,4 +88,4 @@ https://desenvolvimentoparaweb.com/ux/componentes-de-um-sistema-de-navegacao/
 
 12. SWOT da solução final ()
 
-13. Revisão baseada nos feedbacks
+13. Revisão baseada nos feedbacks 
