@@ -1,11 +1,7 @@
 const API_KEY = 'zHrUsAYXvCDsygrhtoBqRoBAvbgHm9UvpLJ87w1c';
 const API_URL = 'https://quizapi.io/api/v1/questions?apiKey=${API_KEY}';
 
-function getQuestions(
-  qtdQuestions: number,
-  difficulty?: string,
-  category?: string
-): Promise<Question[]> {
+export default function getQuestions(qtdQuestions, difficulty, category) {
   // For now, consider the data is stored on a static `users.json` file
   let FINAL_URL = `${API_URL}&limit=${qtdQuestions}`;
   if (difficulty) {
@@ -21,7 +17,7 @@ function getQuestions(
       .then((res) => {
         // The response has an `any` type, so we need to cast
         // it to the `User` type, and return it from the promise
-        return res as Question[];
+        return res;
       })
   );
 }
