@@ -27,22 +27,61 @@ const opt1 = document.getElementById('opt1');
 const opt2 = document.getElementById('opt2');
 const opt3 = document.getElementById('opt3');
 const opt4 = document.getElementById('opt4');
-
-//TODO: Esconder e mostrar divs das respostas de acordo com o numero de respostas!
+const opt5 = document.getElementById('opt5');
+const opt6 = document.getElementById('opt6');
 
 let questionArray = [];
 if (question) {
   getQuestions(1, undefined, undefined).then((questions) => {
     questionArray.push(questions[0]);
     console.log(questionArray[0]);
+    //POPULA QUESTAO COM TEXTO
     question.innerHTML = questionArray[0].question.toString();
     let answers = questionArray[0].answers;
     console.log(answers);
+
+    //POPULA RESPOSTAS COM TEXTO E MOSTRA A DIV DA RESPOSTA
     if (answers.answer_a) {
-      opt1.innerHTML = answers.answer_a.toString();
+      opt1.parentElement.style.display = 'block';
+      opt1.innerHTML = answers.answer_a
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
     }
-    opt2.innerHTML = answers.answer_b.toString();
-    opt3.innerHTML = answers.answer_c.toString();
-    opt4.innerHTML = answers.answer_d.toString();
+    if (answers.answer_b) {
+      opt2.parentElement.style.display = 'block';
+      opt2.innerHTML = answers.answer_b
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
+    }
+    if (answers.answer_c) {
+      opt3.parentElement.style.display = 'block';
+      opt3.innerHTML = answers.answer_c
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
+    }
+    if (answers.answer_d) {
+      opt4.parentElement.style.display = 'block';
+      opt4.innerHTML = answers.answer_d
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
+    }
+    if (answers.answer_e) {
+      opt5.parentElement.style.display = 'block';
+      opt5.innerHTML = answers.answer_e
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
+    }
+    if (answers.answer_f) {
+      opt6.parentElement.style.display = 'block';
+      opt6.innerHTML = answers.answer_f
+        .toString()
+        .replace('<', '&lt;')
+        .replace('>', '&gt;');
+    }
   });
 }
