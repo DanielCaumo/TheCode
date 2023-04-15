@@ -1,14 +1,25 @@
+Protótipo: https://www.figma.com/file/C0Y1bxUNz7yDWbduRNc1RP/TheCode?node-id=0-1&t=GYOMB5pIqJEn1iVi-0
+Entrega: 25/04/2023
+
 1. Breve apresentação do aplicativo
 Titulo:TheCode 
     Aplicação desenvolvida para unidade curricular xxxxx do curso técnico de desenvolvimento de sistemas do senac-rs utilizando o conceito de mobile-first com jogos relacionados ao universo da programação.
 
-2. Brainstorming escolhido
+2. Brainstorming escolhido (Daniel)
 
-3. Análise de referências
+3. Análise de referências 
     termo https://term.ooo/
-    artigo https://artigo.app/
 
-4.Mapa de Empatia
+    artigo 
+        https://artigo.app/
+        https://github.com/TotoroPHD/twitch-redactle
+        https://gist.github.com/Kkevsterrr/aacfa049324f15bc3760e592b84b5889
+        https://codepen.io/adamruf/pen/GZwdrY
+        user-select: none;
+
+
+4.Mapa de Empatia (Tiago)
+https://www.alura.com.br/artigos/guia-pratico-como-montar-mapa-empatia?gclid=CjwKCAjwitShBhA6EiwAq3RqA4flddhaSsuLgWS1cIiZoRtYMJg27jaE3B562ir2O7elLelLbA_W-BoCn4IQAvD_BwE
     O que o usuário pensa e sente?
         O que ele quer de verdade?
         O que não quer de forma nenhuma?
@@ -37,9 +48,9 @@ Titulo:TheCode
         Quem ele escuta?
         Onde se informa?
 
-        O usuário se informa em cursos e sites de programação, está por dentro do cenário de desenvolvimento. Se informa em fóruns como DevMedia.
+        R: O usuário se informa em cursos e sites de programação, está por dentro do cenário de desenvolvimento. Se informa em fóruns como DevMedia.
 
-5. Revisões baseadas nos 6 chapéus
+5. Revisões baseadas nos 6 chapéus (Gabriel)
     branco
         Nome do app?
             TheCode
@@ -66,18 +77,22 @@ Titulo:TheCode
 
     azul
 
-6. Elementos de navegação
+6. Elementos de navegação () - botões / icones (Gabriel)
+https://desenvolvimentoparaweb.com/ux/componentes-de-um-sistema-de-navegacao/
 
-7. Organograma - App map
 
-8. Fluxograma - Casos de uso
+7. Organograma - App map (Daniel)
 
-9. Rabiscoframes e Wireframes
 
-10. Telas protótipos
+8. Fluxograma - Casos de uso (Tiago)
 
-11. Links navegável
 
-12. SWOT da solução final
+9. Rabiscoframes e Wireframes (Daniel)
 
-13. Revisão baseada nos feedbacks
+10. Telas protótipos (Daniel)
+
+11. Links navegável 
+
+12. SWOT da solução final ()
+
+13. Revisão baseada nos feedbacks 
