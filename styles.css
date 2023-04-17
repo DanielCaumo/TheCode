@@ -98,7 +98,7 @@ header {
     display: none;
 }
 
-.button: hover {
+.button:hover {
     background: var(--blue);
 }
 
