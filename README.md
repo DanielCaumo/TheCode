@@ -9,14 +9,7 @@ Titulo:TheCode
 
 3. Análise de referências 
     termo https://term.ooo/
-
-    artigo 
-        https://artigo.app/
-        https://github.com/TotoroPHD/twitch-redactle
-        https://gist.github.com/Kkevsterrr/aacfa049324f15bc3760e592b84b5889
-        https://codepen.io/adamruf/pen/GZwdrY
-        user-select: none;
-
+    artigo https://artigo.app/
 
 4.Mapa de Empatia (Tiago)
 https://www.alura.com.br/artigos/guia-pratico-como-montar-mapa-empatia?gclid=CjwKCAjwitShBhA6EiwAq3RqA4flddhaSsuLgWS1cIiZoRtYMJg27jaE3B562ir2O7elLelLbA_W-BoCn4IQAvD_BwE
