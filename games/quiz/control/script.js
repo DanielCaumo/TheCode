@@ -85,3 +85,86 @@ if (question) {
     }
   });
 }
+
+let selectedAnswer;
+
+function selectOpt1() {
+  clearColors();
+  console.log('Option 1 selected!');
+  opt1.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt1.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_a';
+}
+
+function selectOpt2() {
+  clearColors();
+  console.log('Option 2 selected!');
+  opt2.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt2.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_b';
+}
+
+function selectOpt3() {
+  clearColors();
+  console.log('Option 3 selected!');
+  opt3.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt3.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_c';
+}
+
+function selectOpt4() {
+  clearColors();
+  console.log('Option 4 selected!');
+  opt4.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt4.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_d';
+}
+
+function selectOpt5() {
+  clearColors();
+  console.log('Option 5 selected!');
+  opt5.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt5.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_e';
+}
+
+function selectOpt6() {
+  clearColors();
+  console.log('Option 6 selected!');
+  opt6.parentElement.style.backgroundColor = 'var(--yellow)';
+  opt6.style.backgroundColor = 'var(--yellow)';
+  selectedAnswer = 'answer_f';
+}
+
+function skip() {
+  console.log('Question Skiped!');
+}
+
+function answer() {
+  console.log('Question Answered!');
+  if (selectedAnswer === questionArray[0].correct_answer) {
+    console.log('CORRECT ANSWER!');
+  } else {
+    console.log('WRONG ANSWER!');
+  }
+}
+
+function clearColors() {
+  opt1.parentElement.style.backgroundColor = 'var(--base3)';
+  opt1.style.backgroundColor = 'var(--base3)';
+
+  opt2.parentElement.style.backgroundColor = 'var(--base3)';
+  opt2.style.backgroundColor = 'var(--base3)';
+
+  opt3.parentElement.style.backgroundColor = 'var(--base3)';
+  opt3.style.backgroundColor = 'var(--base3)';
+
+  opt4.parentElement.style.backgroundColor = 'var(--base3)';
+  opt4.style.backgroundColor = 'var(--base3)';
+
+  opt5.parentElement.style.backgroundColor = 'var(--base3)';
+  opt5.style.backgroundColor = 'var(--base3)';
+
+  opt6.parentElement.style.backgroundColor = 'var(--base3)';
+  opt6.style.backgroundColor = 'var(--base3)';
+}
