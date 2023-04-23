@@ -1,13 +1,46 @@
+var apiKey = 'be7cbf41-2b93-472c-a42b-675042ae3bd1';
+
+async function checkWordExists(word) {
+    const response = await fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${apiKey}`);
+    const data = await response.json();
+    return Array.isArray(data) && data.length > 0;
+}
+
+async function test(tested) {
+    const wordExists = await checkWordExists(tested);
+    if(!wordExists) {
+        console.log("palavra não existe")
+        showMessage('Insert a valid word', 2000);
+        return;
+    } else {
+        console.log("palavra existe")
+    }
+}
+
+const tested = "bbbbb"
+test(tested);
+
+// CONTAINERS
 const boardDisplay = document.querySelector('.board-container');
 const keyboard = document.querySelector('.keyboard-container');
 const messageDisplay = document.querySelector('.message-container');
-const word = "EARTH";
-const size = word.length;
+
+// WORD
 const maxLength = 9;
 const minLength = 4;
-const isGameOver = false;
+import words from './words.json' assert { type: 'json'};
+function getRandomWord() {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    const randomWord = words[randomIndex];
+    const word = randomWord.name;
+    const definition = randomWord.definition;
+    return { word, definition };
+}
+const { word, definition } = getRandomWord();
+const size = word.length;
 
 // TILEBOARD
+let guessRows;
 if (size < minLength || size > maxLength) {
     console.error("Word length must be between " + maxLength + " and " + "characters");
   } else {
@@ -15,7 +48,7 @@ if (size < minLength || size > maxLength) {
     for (let i = 0; i < guessRows.length; i++) {
       guessRows[i] = new Array(size).fill('');
     }
-  }
+}
 
 guessRows.forEach((guessRow, guessRowIndex) => {
     const rowElement = document.createElement('div')
@@ -52,6 +85,7 @@ keys.forEach(key => {
 })
 
 // ACTIONS
+const isGameOver = false;
 let currentRow = 0
 let currentTile = 0
 
@@ -91,9 +125,18 @@ const removeLetter = () => {
     }
 }
 
-const checkRow = () => {
+const checkRow = async () => {
+    console.log(currentRow)
     if(currentTile > (size - 1)) {
         const guess = guessRows[currentRow].join('')
+
+        const wordExists = await checkWordExists(guess);
+        if(!wordExists) {
+            showMessage('Insert a valid word', 2000);
+            return;
+        }
+        
+        flipTile()
         console.log('guess is ' + guess, 'wordle is ' + word)
         if(guess == word) {
             showMessage('Congratulations!')
@@ -112,8 +155,52 @@ const checkRow = () => {
     }
 }
 
-const showMessage = (message) => {
-    const messageElement= document.createElement('p')
-    messageElement.textContent = message
+const showMessage = (message, duration = 0) => {
+    const messageElement= document.createElement('p');
+    messageElement.textContent = message;
     messageDisplay.append(messageElement)
+  
+    if (duration > 0) {
+      setTimeout(() => {
+        messageElement.textContent = '';
+        messageElement.style.display = 'none';
+      }, duration);
+    }
+  };
+
+const addColorToKey = (keyLetter, color) => {
+    const key = document.getElementById(keyLetter)
+    key.classList.add(color)
+}
+
+const flipTile = () => {
+    const rowTiles = document.querySelector('#guessRow-' + currentRow).childNodes
+    let checkWord = word
+    const guess = []
+    
+    rowTiles.forEach(tile => {
+        guess.push({letter: tile.getAttribute('data'), color: 'grey-overlay'})
+    })
+
+    guess.forEach((guess, index) => {
+        if (guess.letter == word[index]) {
+            guess.color = 'green-overlay'
+            checkWord = checkWord.replace(guess.letter, '')
+        }
+    })
+
+    guess.forEach(guess => {
+        if (checkWord.includes(guess.letter)) {
+            guess.color = 'yellow-overlay'
+            checkWord = checkWord.replace(guess.letter, '')
+        }
+    })
+
+    rowTiles.forEach((tile, index) => {
+        setTimeout(() => {
+            tile.classList.add('flip')
+            tile.classList.add(guess[index].color)
+            addColorToKey(guess[index].letter, guess[index].color)
+        }, 500 * index)
+    })
 }
