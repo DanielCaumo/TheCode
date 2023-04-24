@@ -1,6 +1,8 @@
 Protótipo: https://www.figma.com/file/C0Y1bxUNz7yDWbduRNc1RP/TheCode?node-id=0-1&t=GYOMB5pIqJEn1iVi-0
 Entrega: 25/04/2023
 
+https://www.canva.com/design/DAFgZ1MRrDM/5QGDlJFKnBEclrdtOBT2Pg/edit
+
 1. Breve apresentação do aplicativo
 Titulo:TheCode 
     Aplicação desenvolvida para unidade curricular xxxxx do curso técnico de desenvolvimento de sistemas do senac-rs utilizando o conceito de mobile-first com jogos relacionados ao universo da programação.
