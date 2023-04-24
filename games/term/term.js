@@ -154,8 +154,8 @@ createTileBoard(size);
 // KEYBOARD
 const keys = [
     'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
-    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-    'enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '«',
+    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '«',
+    'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'enter'
 ]
 
 keys.forEach(key => {
@@ -256,7 +256,7 @@ const showMessage = (message, duration = 0, callback) => {
       setTimeout(() => {
         messageElement.textContent = '';
         messageElement.style.display = 'none';
-        callback();
+
       }, duration);
     }
 };

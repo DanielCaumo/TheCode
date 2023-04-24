@@ -35,19 +35,18 @@
 
 /* Keyboard */
 
-.keyboard-container button:nth-child(20) {
+.keyboard-container button:nth-child(28) {
+    width: calc((200% - 48px)/10);
     font-size: 14px;
-}
-
-.keyboard-container button:nth-child(28) {
-    font-size: 26px;
-}
-
-.keyboard-container button:nth-child(20),
-.keyboard-container button:nth-child(28) {
-    width: calc((150% - 48px)/10);
     font-weight: 500;
-}  
+}
+
+.keyboard-container button:nth-child(20) {
+    width: calc((100% - 48px)/10);
+    font-size: 26px;
+    font-weight: 500;
+};
+
 
 /* Board */
 
@@ -357,6 +356,6 @@
     height: 24px;
     border-radius: 8px;
     background: var(--base3);
-    color: var(--text-color)
+    color: var(--text-color);
     font-family: 'Poppins', sans-serif;
 }
