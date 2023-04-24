@@ -251,28 +251,31 @@ function setContrastMode(state) {
 //Alignment
 const texts = document.querySelectorAll(".text");
 
-document.alignGroup.onclick = function(){
-    var alignValue = document.querySelector('input[name="alignOption"]:checked').value;
-    if(alignValue === "left"){
-        for(const text of texts) {
-            text.style.textAlign = "left";
+if(document.alignGroup){
+    document.alignGroup.onclick = function(){
+        var alignValue = document.querySelector('input[name="alignOption"]:checked').value;
+        if(alignValue === "left"){
+            for(const text of texts) {
+                text.style.textAlign = "left";
+            }
+            setAlignment("left");
+        } else if(alignValue === "center"){
+            for(const text of texts) {
+                text.style.textAlign = "center";
+            }
+            setAlignment("center");
+        } else if(alignValue === "justify"){
+            for(const text of texts) {
+                text.style.textAlign = "justify";
+            }
+            setAlignment("justify");
         }
-        setAlignment("left");
-    } else if(alignValue === "center"){
-        for(const text of texts) {
-            text.style.textAlign = "center";
-        }
-        setAlignment("center");
-    } else if(alignValue === "justify"){
-        for(const text of texts) {
-            text.style.textAlign = "justify";
-        }
-        setAlignment("justify");
     }
-}
+    
+    function setAlignment(state) {
+        localStorage.setItem('alignment', state);
+    }
 
-function setAlignment(state) {
-    localStorage.setItem('alignment', state);
 }
 
 
