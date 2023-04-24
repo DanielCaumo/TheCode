@@ -177,6 +177,12 @@
   var computedtext = computeText(textoOriginal)
   document.getElementById("texto").innerHTML = computedtext;
 
+  document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+    palpite();
+  }
+});
+
   async function palpite() {
 
     var divNumero = document.getElementById("numero");
@@ -221,6 +227,7 @@
     }
   }
   return contador;
+  
 }
 
     // Obtém a div attempt
