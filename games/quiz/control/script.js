@@ -151,9 +151,13 @@ function selectOpt6() {
   opt6.style.backgroundColor = 'var(--yellow)';
   selectedAnswer = 'answer_f_correct';
 }
-
+let skipCount = 0;
 function skip() {
+  skipCount++;
   getAndPopulate();
+  if (skipCount >= 3) {
+    document.getElementById(`skipButton`).disabled = 'true';
+  }
 }
 
 function answer() {
