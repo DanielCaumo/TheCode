@@ -145,6 +145,14 @@ h3 {
   font-size: 16px;
 }
 
+h4 {
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 4px;
+}
+
 p {
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
