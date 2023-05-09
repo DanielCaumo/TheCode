@@ -60,8 +60,9 @@
       <p id="resposta" style="display: none;">tentivas</p>
     </div>
     </div>
+    
     <!--texto-->
-    <div class="texto" id="texto"> </div>
+    <div class="texto text" id="texto"> </div>
     <!--onde usuário ira digitar-->
     <div class="navBottom">
       <input class="writeSpace" type="text" id="entrada-texto">
@@ -290,6 +291,7 @@
     var computedtext = ""
     var lines = textoOriginal.split('\n')
     lines.shift();
+
     lines.unshift(answer);
 
     var begin = 0;

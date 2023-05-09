@@ -21,7 +21,6 @@ async function checkWordExists(word) {
 const boardDisplay = document.querySelector('.board-container');
 const keyboard = document.querySelector('.keyboard-container');
 const scoreDisplay = document.querySelector('.score-container-message');
-const descriptionDisplay = document.querySelector('.definition-container');
 const wordTitle = document.querySelector('.wordTitle');
 const wordDescription = document.querySelector('.wordDescription');
 const nextGameButton = document.querySelector('#nextGame');
