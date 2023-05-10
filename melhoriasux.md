@@ -1,10 +1,10 @@
 ## Geral
 
-- Fazer card de diálogo
-- Melhorar o componente que mostra cada jogo
-  - Colocar borda da mesma cor do fundo
-  - Adicionar botões
-- Melhorar contraste no modo escuro (cores base)
+- [ ] Fazer card de diálogo
+- [ ] Melhorar o componente que mostra cada jogo
+  - [ ] Colocar borda da mesma cor do fundo
+  - [ ] Adicionar botões
+- [ ] Melhorar contraste no modo escuro (cores base)
 
 ## Quiz
 
@@ -20,14 +20,14 @@
 
 ## Term
 
-- Digitar pelo teclado
-- Selecionar um tile aleatório para inserir letra
-- Enviar por enter
-- Modal para mostrar resultado e definição
+- [ ] Digitar pelo teclado
+- [ ] Selecionar um tile aleatório para inserir letra
+- [ ] Enviar por enter
+- [ ] Modal para mostrar resultado e definição
 
 ## Text
 
-- Enviar pelo enter
-- Tutorial do jogo
-- Aplicar máscara com cor mais escura no tema escuro
-- Testar teclado na APK (programmar para receber o teclado)
+- [ ] Enviar pelo enter
+- [ ] Tutorial do jogo
+- [ ] Aplicar máscara com cor mais escura no tema escuro
+- [ ] Testar teclado na APK (programmar para receber o teclado)
