@@ -154,6 +154,7 @@ function selectOpt6() {
 let skipCount = 0;
 function skip() {
   skipCount++;
+  document.getElementById(`skipButton`).innerHTML = `Skip (${3 - skipCount})`;
   getAndPopulate();
   if (skipCount >= 3) {
     document.getElementById(`skipButton`).disabled = 'true';
