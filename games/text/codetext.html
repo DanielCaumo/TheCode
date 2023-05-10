@@ -51,7 +51,7 @@
             <div id="results" class="attempt"></div>
           </div>
         </div>
-        <button class="sendButton" onclick="openNav()"><img src="../../assets/icons/list.svg" alt=""></button>
+        <button class="sendButton button" onclick="openNav()"><img src="../../assets/icons/list.svg" alt="" class="icon"></button>
       </div>
     </div>
     <div class="win">
@@ -66,7 +66,7 @@
     <!--onde usuário ira digitar-->
     <div class="navBottom">
       <input class="writeSpace" type="text" id="entrada-texto">
-      <button class="sendButton" id="botao" onclick="palpite()"><img src="../../assets/icons/pen.png" alt=""></button>
+      <button class="sendButton" id="botao" onclick="palpite()"><img src="../../assets/icons/pen.png" alt="" class="icon"></button>
     </div>
     <!--palavras tentadas-->
     <div class="erros"></div>
@@ -329,7 +329,7 @@
         outputline = "";
       }
       if (i == 0) {
-        lines[i] = "<h1>" + outputline + "</h1>"
+        lines[i] = "<h2>" + outputline + "</h2>"
       }
       else {
         lines[i] = "<p>" + outputline + "</p>"
