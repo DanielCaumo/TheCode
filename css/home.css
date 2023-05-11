@@ -33,7 +33,7 @@
 }
 
 .games-title h2 {
-    color: var(--base3);
+    color: var(--base4);
 }
 
 .games-list {
@@ -54,6 +54,7 @@
     grid-template-columns: 1fr 2fr;
     margin-bottom: 12px;
     box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+    order: 3px solid var(--base3);
 }
 
 .game-card:hover {
