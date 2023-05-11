@@ -14,11 +14,18 @@
 
     /* Dark Theme */
     --dttext-color: #fff;
-    --base6: #37474f;
+    /* --base6: #37474f;
     --base7: #2c383f;
     --base8: #212a2f;
     --base9: #161c1f;
-    --base10: #0b0e0f;
+    --base10: #0b0e0f; */
+
+    --base6: #465A63;
+    --base7: #42545E;
+    --base8: #3B4B54;
+    --base9: #2D3A40;
+    --base10: #1C2426;
+
 
     /* Colors */
     --blue: #2E86AB;

@@ -168,10 +168,10 @@ const lightColors = {
 }
 
 const darkColors = {
-    base1: '#161C1F',
-    base2: '#212A2F',
-    base3: '#4B5960',
-    base4: '#2C383F',
+    base1: '#465A63',
+    base2: '#42545E',
+    base3: '#3B4B54',
+    base4: '#2D3A40',
     textColor: '#fff',
 }
 
