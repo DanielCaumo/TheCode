@@ -4,11 +4,7 @@
 - [ ] Melhorar o componente que mostra cada jogo
   - [ ] Colocar borda da mesma cor do fundo
   - [ ] Adicionar botões
-<<<<<<< HEAD
 - [x] Melhorar contraste no modo escuro (cores base)
-=======
-- [ ] Melhorar contraste no modo escuro (cores base)
->>>>>>> 78530a3d938a9ae4b982c580abe1c5e2641a0ff7
 
 ## Quiz
 
