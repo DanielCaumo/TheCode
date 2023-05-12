@@ -387,12 +387,6 @@
       "definition": "A virus is a type of malicious software that is designed to replicate itself and spread from one computer to another, often with harmful effects. Once a virus has infected a computer, it can interfere with the system's normal functioning, damage files or programs, steal personal information, and cause other types of harm. Viruses can spread through email attachments, software downloads, infected websites, and other methods. It's important for computer users to use antivirus software and be cautious when opening files or clicking links, in order to prevent virus infections."
     },
     {
-      "id": 196,
-      "name": "LINUX",
-      "length": 5,
-      "definition": "Linux is an open-source operating system that is based on the Unix operating system. It was first released in 1991 by Linus Torvalds, a Finnish student, and has since become one of the most popular operating systems in the world, especially for use in servers, supercomputers, and embedded systems. Linux is built on a modular design, which means that users can add or remove software components as needed. It is known for its stability, security, and flexibility, as well as its ability to run on a wide range of hardware platforms. Linux also has a rich community of developers who contribute to its ongoing development and improvement. It is available in many different distributions, each with its own set of features and software packages, and is often used as the foundation for other open-source projects."
-    },
-    {
       "id": 199,
       "name": "REACT",
       "length": 5,
