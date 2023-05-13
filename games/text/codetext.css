@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-
+.game-container {
+  width: calc(100vw - 40px);
+  margin: auto;
+  max-width: 1200px;
+}
 
 div {
   user-select: none;
@@ -14,16 +18,19 @@ div {
 .texto{
   height: 300px;
 	overflow: auto;
-  padding: 12px;
+  padding: 12px 0;
   line-height: 26px;
+  word-spacing: 4px;
 }
 
 .writeSpace{
-  width: calc(90% - 40px);
+  flex-grow: 1;
   height: 40px;
   border-radius: 12px;
   border-style: none;
   background: var(--base3);
+  color: var(--text-color);
+  padding-left: 16px;
 }
 
 .navBottom{
@@ -31,17 +38,18 @@ div {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .palpites{
- 
-  width: calc(90% - 40px);
+  flex-grow: 1;
   height: 40px;
   background: var(--base3);
   border-radius: 10px;
   display: flex;
-			align-items: center;
+	align-items: center;
+  color: var(--text-color);
+  padding-left: 16px;
 } 
 
 .sendButton{
@@ -54,8 +62,8 @@ div {
 }
 
 .notfound {
-  color: var(--base3);
-  background-color: var(--base3);
+  color: var(--base35);
+  background-color: var(--base35);
 }
 
 .correctProposition

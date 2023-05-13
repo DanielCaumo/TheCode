@@ -1,5 +1,5 @@
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -41,35 +41,40 @@
     </div>
   </header>
   <main>
-    <!--numero de tentativas-->
-    <div id="container">
-      <div class="navBottom">
-        <div class="palpites" id="result">attempt...</div>
-        <div id="myNav" class="overlay">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <div class="overlay-content">
-            <div id="results" class="attempt"></div>
+    <div class="game-container">
+
+        <!--numero de tentativas-->
+        <div id="container">
+          <div class="navBottom">
+            <div class="palpites" id="result">attempt...</div>
+            <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content">
+                <div id="results" class="attempt"></div>
+              </div>
+            </div>
+            <button class="sendButton button" onclick="openNav()"><img src="../../assets/icons/list.svg" alt=""
+                class="icon"></button>
           </div>
         </div>
-        <button class="sendButton button" onclick="openNav()"><img src="../../assets/icons/list.svg" alt="" class="icon"></button>
+        <div class="win">
+          <p id="resp" class="" style="display: none;">voce acertou em</p>
+          <div id="numero" style="display: none;">0</div>
+          <p id="resposta" style="display: none;">tentivas</p>
+        </div>
+  
+      <!--texto-->
+      <div class="texto text" id="texto"> </div>
+      <!--onde usuário ira digitar-->
+      <div class="navBottom">
+        <input class="writeSpace" type="text" id="entrada-texto">
+        <button class="sendButton" id="botao" onclick="palpite()"><img src="../../assets/icons/pen.png" alt=""
+            class="icon"></button>
       </div>
+      <!--palavras tentadas-->
+      <div class="erros"></div>
     </div>
-    <div class="win">
-      <p id="resp" class="" style="display: none;">voce acertou em</p>
-      <div id="numero" style="display: none;">0</div>
-      <p id="resposta" style="display: none;">tentivas</p>
-    </div>
-    </div>
-    
-    <!--texto-->
-    <div class="texto text" id="texto"> </div>
-    <!--onde usuário ira digitar-->
-    <div class="navBottom">
-      <input class="writeSpace" type="text" id="entrada-texto">
-      <button class="sendButton" id="botao" onclick="palpite()"><img src="../../assets/icons/pen.png" alt="" class="icon"></button>
-    </div>
-    <!--palavras tentadas-->
-    <div class="erros"></div>
+
   </main>
   <div id="fade" class="hide"></div>
   <div id="settings-modal" class="hide modal">
@@ -178,11 +183,11 @@
   var computedtext = computeText(textoOriginal)
   document.getElementById("texto").innerHTML = computedtext;
 
-  document.addEventListener('keydown', function(event) {
-  if (event.keyCode === 13) {
-    palpite();
-  }
-});
+  document.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+      palpite();
+    }
+  });
 
   async function palpite() {
 
@@ -219,17 +224,17 @@
     let palavra = message;
 
     function contarPalavras(texto, palavra) {
-  let contador = 0;
-  const palavraMinuscula = palavra.toLowerCase();
-  const palavras = texto.toLowerCase().match(/\b\w+([-']\w+)*\b/g);
-  for (let i = 0; i < palavras.length; i++) {
-    if (palavras[i].toLowerCase() === palavraMinuscula && palavras[i] !== '') {
-      contador++;
+      let contador = 0;
+      const palavraMinuscula = palavra.toLowerCase();
+      const palavras = texto.toLowerCase().match(/\b\w+([-']\w+)*\b/g);
+      for (let i = 0; i < palavras.length; i++) {
+        if (palavras[i].toLowerCase() === palavraMinuscula && palavras[i] !== '') {
+          contador++;
+        }
+      }
+      return contador;
+
     }
-  }
-  return contador;
-  
-}
 
     // Obtém a div attempt
     var divAttempt = document.querySelector(".attempt");
