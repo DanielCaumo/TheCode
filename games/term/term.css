@@ -120,6 +120,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text-color);
+    font-weight: 700;
+    text-shadow: 0 0 1px var(--base4), 0 0 5px var(--base3);
 }
 
 @media (min-width: 360px) {
@@ -194,6 +197,7 @@
     padding: 0 12px;
     border-radius: 12px;
     text-align: center;
+    color: var(--text-color);
 }
 
 .score-container p {

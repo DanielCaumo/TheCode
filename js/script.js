@@ -163,15 +163,17 @@ const lightColors = {
     base1: getStyle(html, "--base1"),
     base2: getStyle(html, "--base2"),
     base3: getStyle(html, "--base3"),
+    base35: getStyle(html, "--base35"),
     base4: getStyle(html, "--base4"),
     textColor: getStyle(html, "--text-color"),
 }
 
 const darkColors = {
-    base1: '#161C1F',
-    base2: '#212A2F',
-    base3: '#4B5960',
-    base4: '#2C383F',
+    base1: '#465A63',
+    base2: '#42545E',
+    base3: '#3B4B54',
+    base35: '#37434b',
+    base4: '#2D3A40',
     textColor: '#fff',
 }
 
