@@ -8,16 +8,25 @@
   --base1: #ebeced;
   --base2: #c3c7ca;
   --base3: #9ba3a7;
+  --base35: #90999e;
   --base4: #737e83;
   --base5: #4b5960;
 
-  /* Dark Theme */
-  --dttext-color: #fff;
-  --base6: #37474f;
-  --base7: #2c383f;
-  --base8: #212a2f;
-  --base9: #161c1f;
-  --base10: #0b0e0f;
+    /* Dark Theme */
+    --dttext-color: #fff;
+    /* --base6: #37474f;
+    --base7: #2c383f;
+    --base8: #212a2f;
+    --base9: #161c1f;
+    --base10: #0b0e0f; */
+
+    --base6: #465A63;
+    --base7: #42545E;
+    --base8: #3B4B54;
+    --base85: #37434b;
+    --base9: #2D3A40;
+    --base10: #1C2426;
+
 
   /* Colors */
   --blue: #2e86ab;
