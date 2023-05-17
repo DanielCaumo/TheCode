@@ -8,10 +8,10 @@ scoreText.innerHTML = score;
 function getQuestions(qtdQuestions, difficulty, category) {
   let FINAL_URL = `${API_URL}&limit=${qtdQuestions}`;
   if (difficulty) {
-    FINAL_URL.concat(`&difficulty=${difficulty}`);
+    FINAL_URL = FINAL_URL.concat(`&difficulty=${difficulty}`);
   }
   if (category) {
-    FINAL_URL.concat(`&category=${category}`);
+    FINAL_URL = FINAL_URL.concat(`&category=${category}`);
   }
   return (
     fetch(FINAL_URL)
@@ -34,13 +34,25 @@ const opt5 = document.getElementById('opt5');
 const opt6 = document.getElementById('opt6');
 
 let fetchedQuestion = null;
+let difficultyValue = undefined;
 getAndPopulate();
+
 function getAndPopulate() {
-  getQuestions(1, undefined, undefined).then((questions) => {
+  setDifficultyValue();
+  getQuestions(1, difficultyValue, undefined).then((questions) => {
     fetchedQuestion = questions[0];
     console.log(fetchedQuestion);
     populateQuestionAndAnswers();
   });
+}
+
+function setDifficultyValue() {
+  if (localStorage.getItem('difficulty')) {
+    difficultyValue = localStorage.getItem('difficulty');
+    if (difficultyValue === 'any') {
+      difficultyValue = undefined;
+    }
+  }
 }
 
 function populateQuestionAndAnswers() {

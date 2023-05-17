@@ -11,10 +11,10 @@
 - [x] Melhorar a representação de vidas (coração cheio/ coração vazio)
 - [x] Representação da quantidade de pulos
 - [ ] Tutorial do jogo
-- [ ] Seleção de dificuldade
+- [x] Seleção de dificuldade
 - [ ] Seleção de tema
 - [ ] Melhorar a distribuição dos elementos no desktop
-- [ ] Melhorar a distância entre os elementos no mobile
+- [x] Melhorar a distância entre os elementos no mobile
 - [ ] Fixar posições dos botões de pulo e enviar
 - [ ] Usar grid ocupando todo o espaço restante com as opções
 

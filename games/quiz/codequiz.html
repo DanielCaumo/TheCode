@@ -424,43 +424,6 @@
         </div>
       </div>
       <div>
-        <h3>Text alignment</h3>
-        <form
-          id="three-options-radio"
-          class="radio-container"
-          name="alignGroup"
-        >
-          <input
-            type="radio"
-            name="alignOption"
-            id="align-left"
-            value="left"
-            checked
-          />
-          <label for="align-left"
-            ><img src="../../assets/icons/alignleft.svg" alt="" class="icon"
-          /></label>
-          <input
-            type="radio"
-            name="alignOption"
-            id="align-center"
-            value="center"
-          />
-          <label for="align-center"
-            ><img src="../../assets/icons/aligncenter.svg" alt="" class="icon"
-          /></label>
-          <input
-            type="radio"
-            name="alignOption"
-            id="align-justify"
-            value="justify"
-          />
-          <label for="align-justify"
-            ><img src="../../assets/icons/alignjustify.svg" alt="" class="icon"
-          /></label>
-        </form>
-      </div>
-      <div>
         <h3>Font size</h3>
         <h4></h4>
         <form
@@ -502,6 +465,46 @@
         </form>
       </div>
       <div>
+        <h3>Difficulty</h3>
+        <form
+          id="difficultyGroup"
+          class="radio-container"
+          name="difficultyGroup"
+        >
+          <input
+            type="radio"
+            name="difficultyOption"
+            id="difficulty-easy"
+            value="easy"
+            checked
+          />
+          <label for="difficulty-easy" style="color: var(--green)">E</label>
+          <input
+            type="radio"
+            name="difficultyOption"
+            id="difficulty-medium"
+            value="medium"
+          />
+          <label for="difficulty-medium" style="color: var(--yellow)">M</label>
+          <input
+            type="radio"
+            name="difficultyOption"
+            id="difficulty-hard"
+            value="hard"
+          />
+          <label for="difficulty-hard" style="color: var(--red)">H</label>
+          <input
+            type="radio"
+            name="difficultyOption"
+            id="difficulty-any"
+            value="any"
+          />
+          <label for="difficulty-any" style="color: var(--text-color)"
+            >any</label
+          >
+        </form>
+      </div>
+      <div>
         <button type="button" id="settings-close-button" class="button">
           <img src="../../assets/icons/x.svg" alt="" class="icon" />
           <span>Fechar</span>
@@ -515,7 +518,7 @@
       <div class="modal-text">
         <div class="modal-text-container">
           <p class="text">
-            <strong>TheCode</strong> is a collection of games inspired by other
+            <strong>Quiz</strong> is a collection of games inspired by other
             popular ones like Wordle, Redactle, and Quiz, but with a focus on
             the programming universe to help students assimilate essential terms
             and subjects. This application was developed by
