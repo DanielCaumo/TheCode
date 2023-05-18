@@ -91,3 +91,67 @@ https://desenvolvimentoparaweb.com/ux/componentes-de-um-sistema-de-navegacao/
 12. SWOT da solução final ()
 
 13. Revisão baseada nos feedbacks 
+
+
+
+USER EXPERIENCE
+1. Usabilidade: atributo de qualidade que mede quão fácil é usar a interface de um produto
+    - Aprendizagem: usuários conseguem cumprir tarefas básicas no seu site logo na primeira vez que acessam? 
+    - Eficiência: Agora que eles já aprenderam a usar, conseguem fazer isso com rapidez?
+    - Memorabilidade: conseguem se lembrar como devem usar o site ou app depos de passar algum tempo sem acessar?
+    - Prevenção de erros: usabilidade é tão  boa que evita que seus usuários cometam erros ou, pelo menos, ajuda a desfazer o erro facilmente?
+    - Satisfação: Isiário sente feliz porque consegue fazer tudo aquilo que ele precisa?
+2. Interface: É o que chamamos tambem de design. É a forma como você se comunica com seu usuário e como ele pode interagir com o produto que você criou.
+
+
+https://brasil.uxdesign.cc/10-heur%C3%ADsticas-de-nielsen-para-o-design-de-interface-58d782821840
+Heurísticas de Nielsen
+- Manter status visível
+- Tenha proximidade com o mundo real (identificar que um usuário voltou por exemplo)
+- Exerça o controle, sem tirar a liberdade
+- Mantenha a consistência e os padrões
+- Prevenção de erros
+- Reconhecimento em vez de memorização
+- Eficiência e flexibilidade de uso
+- Estética e design minimalista
+- Ajude os usuários a reconhecerem, diagnosticarem e recuperarem-se de erros
+- Ajuda e documentação
+
+
+
+
+nngroup.com
+https://design.google/
+https://developer.apple.com/design/human-interface-guidelines
+
+
+---
+1. Usabilidade
+    - Aprendizagem
+    - Eficiência
+    - Memorabilidade
+    - Prevenção de erros
+    - Satisfação
+
+2. Heurísticas
+    - Manter status visível
+    - Tenha proximidade com o mundo real (identificar que um usuário voltou por exemplo)
+    - Exerça o controle, sem tirar a liberdade
+    - Mantenha a consistência e os padrões
+    - Prevenção de erros
+    - Reconhecimento em vez de memorização
+    - Eficiência e flexibilidade de uso
+    - Estética e design minimalista
+    - Ajude os usuários a reconhecerem, diagnosticarem e recuperarem-se de erros
+    - Ajuda e documentação
+
+3. Arquitetura da informação
+    - inventário de conteúdo
+    - auditorias de conteúdo
+    - agrupamento informações
+    - taxonomia
+    - informações descritivas
+
+4. Público alvo x Persona
+    - criar a persona
+
