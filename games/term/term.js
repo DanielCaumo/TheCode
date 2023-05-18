@@ -154,8 +154,10 @@ createTileBoard(size);
 const keys = [
     'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
     'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '«',
-    'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'enter',
+    'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'ENTER',
 ]
+
+
 
 keys.forEach(key => {
     const buttonElement = document.createElement('button')
@@ -169,13 +171,33 @@ keys.forEach(key => {
 // ACTIONS
 let currentRow = 0
 let currentTile = 0
+const allowedKeys = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'y', 'Y', 'z', 'Z', 'Enter', 'Backspace'];
+
+document.addEventListener('keydown', (event) => {
+    let key = event.key;
+    if (allowedKeys.includes(key)) {
+      if (key == 'Backspace') {
+        key = '«';
+      }
+      const letter = key.toUpperCase();
+      handleClick(letter);
+    }
+  });
+
+  // Add a click event listener to each tile in the current row
+for (let i = 0; i < size; i++) {
+      const tile = document.getElementById('guessRow-' + currentRow + '-tile-' + i);
+      tile.addEventListener('click', () => {
+      currentTile = i;
+    });
+}
 
 const handleClick = (letter) => {
     if (letter === '«') {
         removeLetter()
         return
     }
-    if (letter === 'enter') {
+    if (letter === 'ENTER') {
         checkRow();
         return
     }

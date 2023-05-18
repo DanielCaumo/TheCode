@@ -20,9 +20,9 @@
 
 ## Term
 
-- [ ] Digitar pelo teclado
+- [x] Digitar pelo teclado
 - [ ] Selecionar um tile aleatório para inserir letra
-- [ ] Enviar por enter
+- [x] Enviar por enter
 - [ ] Modal para mostrar resultado e definição
 
 ## Text
@@ -30,8 +30,6 @@
 - [ ] Enviar pelo enter
 - [ ] Tutorial do jogo
 - [ ] Aplicar máscara com cor mais escura no tema escuro
-<<<<<<< HEAD
 - [ ] Testar teclado na APK (programmar para receber o teclado)
-=======
-- [ ] Testar teclado na APK (programmar para receber o teclado)
->>>>>>> 78530a3d938a9ae4b982c580abe1c5e2641a0ff7
+
+
