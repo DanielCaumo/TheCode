@@ -136,6 +136,12 @@ function createTileBoard(size) {
       tileElement.setAttribute('id', 'guessRow-' + guessRowIndex + '-tile-' + guessIndex)
       tileElement.classList.add('tile')
       rowElement.append(tileElement)
+      
+      // Add a click event listener to each tile in the row
+      tileElement.addEventListener('click', () => {
+        currentRow = guessRowIndex;
+        currentTile = guessIndex;
+      });
     })
     boardDisplay.append(rowElement)
   })
@@ -171,25 +177,19 @@ keys.forEach(key => {
 // ACTIONS
 let currentRow = 0
 let currentTile = 0
-const allowedKeys = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'y', 'Y', 'z', 'Z', 'Enter', 'Backspace'];
+const allowedKeys = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'X', 'x', 'y', 'Y', 'z', 'Z', 'Enter', 'Backspace'];
 
-document.addEventListener('keydown', (event) => {
-    let key = event.key;
-    if (allowedKeys.includes(key)) {
-      if (key == 'Backspace') {
-        key = '«';
-      }
-      const letter = key.toUpperCase();
-      handleClick(letter);
+document.addEventListener('keydown', handleKeyDown);
+
+function handleKeyDown(event) {
+  let key = event.key;
+  if (allowedKeys.includes(key)) {
+    if (key == 'Backspace') {
+      key = '«';
     }
-  });
-
-  // Add a click event listener to each tile in the current row
-for (let i = 0; i < size; i++) {
-      const tile = document.getElementById('guessRow-' + currentRow + '-tile-' + i);
-      tile.addEventListener('click', () => {
-      currentTile = i;
-    });
+    const letter = key.toUpperCase();
+    handleClick(letter);
+  }
 }
 
 const handleClick = (letter) => {
@@ -226,61 +226,86 @@ const removeLetter = () => {
 }
 
 const checkRow = async () => {
-    if (currentTile > size - 1) {
-      const guess = guessRows[currentRow].join("");
-  
-      const wordExists = await checkWordExists(guess);
-      if (!wordExists) {
-        showMessage("Insert a valid word", 2000);
-        return;
-      }
-  
-      flipTile();
-      console.log("guess is " + guess, "word is " + word);
-      if (guess == word) {
-        score++
-        scoreView.textContent = score;
-        localStorage.setItem('score', score);
-        localStorage.setItem('record', record);
-        checkRecord(score);
-        showMessage('Congratulations!!!', 5000, function(){
-            nextGameButton.removeAttribute("hidden");
-            nextGameButton.addEventListener("click", function() {startNewGame()});
-        });
-        showDescription(word, definition);
-      } else {
-        if (currentRow >= 5) {
-            score = 0
-            scoreView.textContent = score;
-            localStorage.setItem('score', score);
-            checkRecord(score);
-            showMessage("Game over!", 5000, function(){
-                nextGameButton.removeAttribute("hidden");
-                nextGameButton.addEventListener("click", function() {startNewGame()});
-            });
-            showDescription(word, definition);
-        }
-        if (currentRow < 5) {
-          currentRow++;
-          currentTile = 0;
-        }
-      }
-    }
-  };
+  const guess = guessRows[currentRow].join("");
 
-const showMessage = (message, duration = 0, callback) => {
-    const messageElement= document.createElement('p');
+  if (guess.length !== size) {
+    showMessage("Insert a word with " + size + " characters", 2000);
+    return;
+  }
+  
+  const wordExists = await checkWordExists(guess);
+  if (!wordExists) {
+    showMessage("Insert a valid word", 2000);
+    return;
+  }
+
+  flipTile();
+  console.log("guess is " + guess, "word is " + word);
+  
+  if (guess == word) {
+    score++;
+    scoreView.textContent = score;
+    localStorage.setItem('score', score);
+    localStorage.setItem('record', record);
+    checkRecord(score);
+    showMessage('Congratulations!!!', 5000, function(){
+        nextGameButton.removeAttribute("hidden");
+        nextGameButton.addEventListener("click", function() {startNewGame()});
+    });
+    showDescription(word, definition);
+
+    // Open the modal here
+    const modalResults = document.getElementById('results-modal');
+    modalResults.classList.remove('hide');
+  } else {
+    if (currentRow >= 5) {
+      score = 0;
+      scoreView.textContent = score;
+      localStorage.setItem('score', score);
+      checkRecord(score);
+      showMessage("Game over!", 5000, function(){
+          nextGameButton.removeAttribute("hidden");
+          nextGameButton.addEventListener("click", function() {startNewGame()});
+      });
+      showDescription(word, definition);
+
+      // Open the modal here
+      const modal = document.getElementById('results-modal');
+      modal.classList.remove('hide');
+    }
+    if (currentRow < 5) {
+      currentRow++;
+      currentTile = 0;
+    }
+  }
+};
+
+  let messageTimeout = null;
+
+  const showMessage = (message, duration = 0, callback) => {
+    clearTimeout(messageTimeout);
+  
+    // Remove the previous message element, if it exists
+    const previousMessageElement = scoreDisplay.querySelector('p');
+    if (previousMessageElement) {
+      previousMessageElement.remove();
+    }
+  
+    const messageElement = document.createElement('p');
     messageElement.textContent = message;
-    scoreDisplay.append(messageElement)
+    scoreDisplay.append(messageElement);
   
     if (duration > 0) {
-      setTimeout(() => {
+      messageTimeout = setTimeout(() => {
         messageElement.textContent = '';
         messageElement.style.display = 'none';
-        callback();
+  
+        if (callback) {
+          callback();
+        }
       }, duration);
     }
-};
+  };
 
 const showDescription = (word, description, duration = 0) => {
     wordTitle.textContent = word;

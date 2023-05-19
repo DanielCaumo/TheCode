@@ -21,8 +21,9 @@
 ## Term
 
 - [x] Digitar pelo teclado
-- [ ] Selecionar um tile aleatório para inserir letra
+- [x] Selecionar um tile aleatório para inserir letra
 - [x] Enviar por enter
+- [x] Impedir que uma nova mensagem de erro aparece antes que o timeout termine
 - [ ] Modal para mostrar resultado e definição
 
 ## Text
