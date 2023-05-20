@@ -175,7 +175,7 @@ input[type="radio"]:checked + label {
 
 
 @media (max-height: 779px) {
-    .modal {
-        height: 550px;
-    }
+  #settings-modal, #about-modal {
+    height: 550px;
+  }
 }

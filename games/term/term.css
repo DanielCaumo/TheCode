@@ -381,7 +381,7 @@
         height: 40px;
     }
 
-    .definition-container {
+    #modal-resultado {
         height: 550px;
     }
 }
