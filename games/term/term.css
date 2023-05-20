@@ -139,7 +139,7 @@
     z-index: 10;
     border-radius: 12px;
     display: grid;
-    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
     background: var(--base1);
 }
 
@@ -150,6 +150,10 @@
     align-items: center;
     container-type: inline-size;
     gap: 8px;
+}
+
+.resultStatus {
+    color: var(--text-color);
 }
 
 #wordDescriptionContainer {
@@ -395,4 +399,48 @@
     .keyboard-container button {
         height: 50px;
     }
+}
+
+
+#confetti-canvas{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+}
+
+#trophy path {
+    fill: var(--green);
+}
+
+#gameover path {
+    fill: var(--red);
+}
+
+.wordResult{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--base3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--base4);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--base);
 }

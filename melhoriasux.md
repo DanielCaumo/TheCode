@@ -26,6 +26,7 @@
 - [x] Impedir que uma nova mensagem de erro aparece antes que o timeout termine
 - [x] Adicionar hover no quadrado clicável
 - [x] Modal para mostrar resultado e definição
+- [x] Adicionar animação e ícones para vitória e derrota
 
 ## Text
 

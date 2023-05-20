@@ -45,42 +45,39 @@
       </div>
     </header>
 
+    <canvas id="confetti-canvas"></canvas>
     <main>
-      <div class="game-container">
-
+      <div id="game-container" class="game-container">
         <div class="score-container">
           <div class="score">
             <h4>Record</h4>
             <p id="running-record"></p>
           </div>
-          <div class="score-container-message">
-          </div>
+          <div class="score-container-message"></div>
           <div class="score">
             <h4>Score</h4>
             <p id="running-score"></p>
           </div>
         </div>
 
-        <div class="board-container">
-        </div>
+        <div class="board-container"></div>
 
-        <div class="definition-container">
-        </div>
-  
-        <div class="keyboard-container">
-  
-        </div>
+        <div class="definition-container"></div>
+
+        <div class="keyboard-container"></div>
       </div>
     </main>
 
     <div id="modal-resultado" class="modal-resultado hidemodal">
       <div>
-        <h3 class="resultStatus"></h3>
+        <img src="../../assets/icons/trophyfill.svg" alt="" id="trophy" class="icon happy-icon" hidden />
+        <img src="../../assets/icons/gameover.svg" alt="" id="gameover" class="icon sad-icon" hidden />
+        <h2 class="resultStatus"></h2>
+        </svg>
       </div>
-      <div>
+      <div class="wordResult">
+        <p>The word is:</p>
         <h2 class="wordTitle"></h2>
-      </div>
-      <div>
         <p class="wordDescription text"></p>
       </div>
       <div>
@@ -89,10 +86,9 @@
         </button>
       </div>
     </div>
-    
+
     <div id="fade" class="hide"></div>
 
-    
     <div id="settings-modal" class="hide modal">
       <div>
         <h2>Settings</h2>
@@ -129,34 +125,67 @@
       </div>
       <div>
         <h3>Number of letters</h3>
-        <form
-          id="six-options-check"
-        >
+        <form id="six-options-check">
           <label class="settings-letters">
-            <input type="checkbox" value="4" id="check4" name="letters" checked>
+            <input
+              type="checkbox"
+              value="4"
+              id="check4"
+              name="letters"
+              checked
+            />
             <span class="check-icon">4</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="5" id="check5" name="letters" checked>
+            <input
+              type="checkbox"
+              value="5"
+              id="check5"
+              name="letters"
+              checked
+            />
             <span class="check-icon">5</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="6" id="check6" name="letters" checked>
+            <input
+              type="checkbox"
+              value="6"
+              id="check6"
+              name="letters"
+              checked
+            />
             <span class="check-icon">6</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="7" id="check7" name="letters" checked>
+            <input
+              type="checkbox"
+              value="7"
+              id="check7"
+              name="letters"
+              checked
+            />
             <span class="check-icon">7</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="8" id="check8" name="letters" checked>
+            <input
+              type="checkbox"
+              value="8"
+              id="check8"
+              name="letters"
+              checked
+            />
             <span class="check-icon">8</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="9" id="check9" name="letters" checked>
+            <input
+              type="checkbox"
+              value="9"
+              id="check9"
+              name="letters"
+              checked
+            />
             <span class="check-icon">9</span>
           </label>
-
         </form>
       </div>
       <div>
@@ -216,7 +245,9 @@
           <h3>Rules</h3>
           <ul class="rules">
             <li>Guess the secret word of a chosen length within 6 attempts.</li>
-            <li>Feedback is provided after each guess with red and white pegs.</li>
+            <li>
+              Feedback is provided after each guess with red and white pegs.
+            </li>
             <li>Choose the word length using settings.</li>
           </ul>
           <h3>Feedbacks</h3>
@@ -226,7 +257,7 @@
                 <div>A</div>
                 <div>G</div>
                 <div>I</div>
-                <div style="background-color: var(--base4);">L</div>
+                <div style="background-color: var(--base4)">L</div>
                 <div>E</div>
               </div>
               <p>L is not in the word in any spot</p>
@@ -237,7 +268,7 @@
                 <div>T</div>
                 <div>A</div>
                 <div>C</div>
-                <div style="background-color: var(--yellow);">K</div>
+                <div style="background-color: var(--yellow)">K</div>
               </div>
               <p>K is in the word but in the wrong spot.</p>
             </li>
@@ -245,7 +276,7 @@
               <div class="howtoplayrow">
                 <div>P</div>
                 <div>R</div>
-                <div style="background-color: var(--green);">O</div>
+                <div style="background-color: var(--green)">O</div>
                 <div>X</div>
                 <div>Y</div>
               </div>
