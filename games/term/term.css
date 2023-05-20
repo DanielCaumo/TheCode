@@ -181,6 +181,10 @@
 
 
 @media (max-height: 779px) {
+    .score-container {
+        height: 60px;
+    }
+
     .board-container .tile {
         max-width: 30px;
         height: 30px;
