@@ -54,9 +54,6 @@
             <p id="running-record"></p>
           </div>
           <div class="score-container-message">
-            <button id="nextGame" hidden>
-              <p>next game</p>
-            </button>
           </div>
           <div class="score">
             <h4>Score</h4>
@@ -76,31 +73,26 @@
       </div>
     </main>
 
-    <div id="fade" class="hide"></div>
-
-
-    <div id="resuts-modal" class="resultado">
+    <div id="modal-resultado" class="modal-resultado hidemodal">
       <div>
-        <h3>Texto</h3>
+        <h3 class="resultStatus"></h3>
       </div>
       <div>
-        <h3 class="wordTitle"></h3>
+        <h2 class="wordTitle"></h2>
       </div>
       <div>
-        <p class="wordDescription"></p>
+        <p class="wordDescription text"></p>
       </div>
       <div>
-        <button type="button" id="settings-close-button" class="button">
-          <img src="../../assets/icons/x.svg" alt="" class="icon" />
-          <span>Fechar</span>
-        </button>
-        <button type="button" id="settings-close-button" class="button">
-          <img src="../../assets/icons/x.svg" alt="" class="icon" />
-          <span>Fechar</span>
+        <button type="button" id="nextGame" class="button">
+          <span>Next Game</span>
         </button>
       </div>
     </div>
+    
+    <div id="fade" class="hide"></div>
 
+    
     <div id="settings-modal" class="hide modal">
       <div>
         <h2>Settings</h2>

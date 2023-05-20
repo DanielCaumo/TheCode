@@ -21,11 +21,14 @@ async function checkWordExists(word) {
 const boardDisplay = document.querySelector('.board-container');
 const keyboard = document.querySelector('.keyboard-container');
 const scoreDisplay = document.querySelector('.score-container-message');
+const resultStatus = document.querySelector('.resultStatus');
 const wordTitle = document.querySelector('.wordTitle');
 const wordDescription = document.querySelector('.wordDescription');
 const nextGameButton = document.querySelector('#nextGame');
 const scoreView = document.querySelector('#running-score');
 const recordView = document.querySelector('#running-record');
+const resultModal = document.querySelector('#modal-resultado');
+nextGameButton.addEventListener('click', startNewGame);
 
 // SCORE
 let score = 0;
@@ -139,9 +142,27 @@ function createTileBoard(size) {
       
       // Add a click event listener to each tile in the row
       tileElement.addEventListener('click', () => {
+        const clickedRow = parseInt(tileElement.parentNode.getAttribute('id').split('-')[1]);
+        if (clickedRow !== currentRow) {
+            return;
+        }
+    
         currentRow = guessRowIndex;
         currentTile = guessIndex;
-      });
+    
+        // Remove the existing hover class from all tiles
+        const tiles = document.querySelectorAll('.tile');
+        tiles.forEach(tile => {
+            tile.classList.remove('hover');
+        });
+    
+        // Add the hover class to tiles in the current row
+        const currentRowTiles = document.querySelectorAll('.guess-row#guessRow-' + currentRow + ' .tile');
+        currentRowTiles.forEach(tile => {
+            tile.classList.add('hover');
+        });
+    });
+    
     })
     boardDisplay.append(rowElement)
   })
@@ -232,7 +253,7 @@ const checkRow = async () => {
     showMessage("Insert a word with " + size + " characters", 2000);
     return;
   }
-  
+
   const wordExists = await checkWordExists(guess);
   if (!wordExists) {
     showMessage("Insert a valid word", 2000);
@@ -241,37 +262,30 @@ const checkRow = async () => {
 
   flipTile();
   console.log("guess is " + guess, "word is " + word);
-  
+
   if (guess == word) {
+    if (!resultModal.classList.contains('hidemodal')) {
+      // Game has already ended, ignore the score increment
+      return;
+    }
+
     score++;
     scoreView.textContent = score;
     localStorage.setItem('score', score);
     localStorage.setItem('record', record);
     checkRecord(score);
-    showMessage('Congratulations!!!', 5000, function(){
-        nextGameButton.removeAttribute("hidden");
-        nextGameButton.addEventListener("click", function() {startNewGame()});
-    });
+    resultStatus.textContent = "Congratulations!!!";
     showDescription(word, definition);
-
-    // Open the modal here
-    const modalResults = document.getElementById('results-modal');
-    modalResults.classList.remove('hide');
+    resultModal.classList.remove('hidemodal');
   } else {
     if (currentRow >= 5) {
       score = 0;
       scoreView.textContent = score;
       localStorage.setItem('score', score);
       checkRecord(score);
-      showMessage("Game over!", 5000, function(){
-          nextGameButton.removeAttribute("hidden");
-          nextGameButton.addEventListener("click", function() {startNewGame()});
-      });
+      resultStatus.textContent = "Game over!";
       showDescription(word, definition);
-
-      // Open the modal here
-      const modal = document.getElementById('results-modal');
-      modal.classList.remove('hide');
+      resultModal.classList.remove('hidemodal');
     }
     if (currentRow < 5) {
       currentRow++;
@@ -362,6 +376,7 @@ const flipTile = () => {
   }
 
 function startNewGame() {
+    resultModal.classList.add('hidemodal');
     const rowTiles = document.querySelectorAll('.tile');
     const keyButtons = document.querySelectorAll('.letterKey');
     nextGameButton.setAttribute("hidden", "true");
@@ -373,14 +388,14 @@ function startNewGame() {
         tile.classList.remove('grey-overlay');
         tile.classList.remove('yellow-overlay');
         tile.classList.remove('green-overlay');
-    })
+    });
     keyButtons.forEach(key => {
         key.classList.remove('grey-overlay');
         key.classList.remove('yellow-overlay');
         key.classList.remove('green-overlay');
-    })
-    currentRow = 0
-    currentTile = 0
+    });
+    currentRow = 0;
+    currentTile = 0;
     const newGameWord = getRandomWord(checkedLengths, wordsByLength);
     word = newGameWord.word;
     definition = newGameWord.definition;
