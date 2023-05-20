@@ -164,47 +164,6 @@
     margin: auto;
 }
 
-@media (min-width: 360px) {
-    .board-container .tile{
-        max-width: 50px;
-        height: 50px;
-    }
-}
-
-
-@media (min-width: 800px) {
-    .board-container .tile{
-        max-width: 60px;
-        height: 60px;
-    }
-}
-
-
-@media (max-height: 779px) {
-    .score-container {
-        height: 60px;
-    }
-
-    .board-container .tile {
-        max-width: 30px;
-        height: 30px;
-    }
-
-    .keyboard-container button {
-        height: 40px;
-    }
-}
-
-@media (min-height: 780px) {
-    .board-container .tile{
-        max-width: 50px;
-        height: 50px;
-    }
-
-    .keyboard-container button {
-        height: 50px;
-    }
-}
 
 
 /* Score */
@@ -222,7 +181,7 @@
     border: none;
     padding: 0;
     margin: 0;
-  }
+}
 
 .score-container .score {
     padding: 0 12px;
@@ -263,7 +222,7 @@
     margin: 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
-  }
+}
 
 .wordTitle {
     height: 24px;
@@ -327,37 +286,37 @@
     align-items: center;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .settings-letters input[type="checkbox"] {
+}
+
+.settings-letters input[type="checkbox"] {
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0;
     cursor: pointer;
-  }
-  
-  .settings-letters .check-icon {
+}
+
+.settings-letters .check-icon {
     border-radius: 50%;
     font-size: 16px;
     font-weight: 600
-  }
+}
   
-  .settings-letters input[type="checkbox"]:checked + .check-icon {
+.settings-letters input[type="checkbox"]:checked + .check-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--blue);
     height: 42px;
     width: 42px;
-  }
-  
+}
+
   .settings-letters .check-icon:before {
     font-size: 16px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 .modal-text-container h3 {
     font-size: 16px !important;
@@ -390,4 +349,50 @@
     background: var(--base3);
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 360px) {
+    .board-container .tile{
+        max-width: 50px;
+        height: 50px;
+    }
+}
+
+
+@media (min-width: 800px) {
+    .board-container .tile{
+        max-width: 60px;
+        height: 60px;
+    }
+}
+
+
+@media (max-height: 779px) {
+    .score-container {
+        height: 60px;
+    }
+
+    .board-container .tile {
+        max-width: 30px;
+        height: 30px;
+    }
+
+    .keyboard-container button {
+        height: 40px;
+    }
+
+    .definition-container {
+        height: 550px;
+    }
+}
+
+@media (min-height: 780px) {
+    .board-container .tile{
+        max-width: 50px;
+        height: 50px;
+    }
+
+    .keyboard-container button {
+        height: 50px;
+    }
 }
