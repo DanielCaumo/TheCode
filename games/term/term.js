@@ -32,7 +32,7 @@ nextGameButton.addEventListener('click', startNewGame);
 
 // SCORE
 let score = 0;
-let record = 0;
+let record = localStorage.getItem('record') ?? 0;
 scoreView.textContent = score;
 recordView.textContent = record;
 function checkRecord(score) {
@@ -390,7 +390,7 @@ function startNewGame() {
 
     resultModal.classList.add('hidemodal');
     document.querySelector('.happy-icon').setAttribute("hidden", "");;
-    document.querySelector('.happy-icon').setAttribute("hidden", "");;
+    document.querySelector('.sad-icon').setAttribute("hidden", "");;
     const rowTiles = document.querySelectorAll('.tile');
     const keyButtons = document.querySelectorAll('.letterKey');
     nextGameButton.setAttribute("hidden", "true");
@@ -420,7 +420,7 @@ function startNewGame() {
 // Confetti
 
 var maxParticleCount = 500; //set max confetti count
-var particleSpeed = 1; //set the particle animation speed
+var particleSpeed = 0.5; //set the particle animation speed
 var startConfetti; //call to start confetti animation
 var stopConfetti; //call to stop adding confetti
 var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
@@ -441,7 +441,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 		particle.color = colors[(Math.random() * colors.length) | 0];
 		particle.x = Math.random() * width;
 		particle.y = Math.random() * height - height;
-		particle.diameter = Math.random() * 4 + 2;
+		particle.diameter = Math.random() * 1 + 1;
 		particle.tilt = Math.random() * 10 - 10;
 		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
 		particle.tiltAngle = 0;

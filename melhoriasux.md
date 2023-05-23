@@ -5,6 +5,7 @@
   - [ ] Colocar borda da mesma cor do fundo
   - [ ] Adicionar botões
 - [x] Melhorar contraste no modo escuro (cores base)
+- [ ] Melhorar contraste título games
 
 ## Quiz
 
@@ -25,8 +26,11 @@
 - [x] Enviar por enter
 - [x] Impedir que uma nova mensagem de erro aparece antes que o timeout termine
 - [x] Adicionar hover no quadrado clicável
+- [x] Permitir apenas palavras com a quantidade de tiles
 - [x] Modal para mostrar resultado e definição
 - [x] Adicionar animação e ícones para vitória e derrota
+- [x] Salvar record no localStorage
+- [ ] Verificar palavras que não estão na API
 
 ## Text
 
