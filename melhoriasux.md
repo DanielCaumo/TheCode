@@ -5,6 +5,7 @@
   - [ ] Colocar borda da mesma cor do fundo
   - [ ] Adicionar botões
 - [x] Melhorar contraste no modo escuro (cores base)
+- [ ] Criar Persona
 
 ## Quiz
 
@@ -30,8 +31,7 @@
 - [ ] Enviar pelo enter
 - [ ] Tutorial do jogo
 - [ ] Aplicar máscara com cor mais escura no tema escuro
-<<<<<<< HEAD
+      <<<<<<< HEAD
+- [ ] # Testar teclado na APK (programmar para receber o teclado)
 - [ ] Testar teclado na APK (programmar para receber o teclado)
-=======
-- [ ] Testar teclado na APK (programmar para receber o teclado)
->>>>>>> 78530a3d938a9ae4b982c580abe1c5e2641a0ff7
+  > > > > > > > 78530a3d938a9ae4b982c580abe1c5e2641a0ff7
