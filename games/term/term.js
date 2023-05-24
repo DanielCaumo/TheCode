@@ -17,6 +17,8 @@ async function checkWordExists(word) {
     return true;
 }
 
+const extraWords = ['JSON', 'ASYNC', 'KERMIT', 'GITHUB', 'DJANGO', 'DEVOPS', 'LARAVEL', 'FAVICON', 'GYGABITE', 'COROUTINE', 'UNDERFLOW', 'WIREFRAME']
+
 // CONTAINERS
 const boardDisplay = document.querySelector('.board-container');
 const keyboard = document.querySelector('.keyboard-container');
@@ -31,7 +33,7 @@ const resultModal = document.querySelector('#modal-resultado');
 nextGameButton.addEventListener('click', startNewGame);
 
 // SCORE
-let score = 0;
+let score = localStorage.getItem('score') ?? 0;
 let record = localStorage.getItem('record') ?? 0;
 scoreView.textContent = score;
 recordView.textContent = record;
@@ -255,7 +257,7 @@ const checkRow = async () => {
   }
 
   const wordExists = await checkWordExists(guess);
-  if (!wordExists) {
+  if (!wordExists && !(extraWords.includes(guess))) {
     showMessage("Insert a valid word", 2000);
     return;
   }
@@ -276,9 +278,9 @@ const checkRow = async () => {
 
     score++;
     scoreView.textContent = score;
+    checkRecord(score);
     localStorage.setItem('score', score);
     localStorage.setItem('record', record);
-    checkRecord(score);
     resultStatus.style.color = "var(--green)";
     resultStatus.textContent = "Congratulations!!!";
     document.querySelector('.happy-icon').removeAttribute('hidden');

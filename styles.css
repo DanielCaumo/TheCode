@@ -202,3 +202,7 @@ strong {
 html {
   max-width: 100%;
 }
+
+#header-term {
+  background-color: var(--blue);
+}

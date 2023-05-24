@@ -30,7 +30,8 @@
 - [x] Modal para mostrar resultado e definição
 - [x] Adicionar animação e ícones para vitória e derrota
 - [x] Salvar record no localStorage
-- [ ] Verificar palavras que não estão na API
+- [x] Salvar o score no localStorage para que o jogador possa continuar a sequência de vitórias quando retornar ao jogo
+- [x] Verificar palavras que não estão na API
 
 ## Text
 
