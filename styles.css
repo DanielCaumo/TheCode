@@ -28,12 +28,21 @@
     --base10: #1C2426;
 
 
-  /* Colors */
+  /* Basic Colors */
   --blue: #2e86ab;
   --green: #2aa876;
   --yellow: #ffd265;
   --orange: #f19c65;
   --red: #e8554e;
+
+  /* Game Colors */
+  /* --quiz: #5C8EF2;
+  --term: #55A63F;
+  --text: #D91818; */
+
+  --term: #ffd265;
+  --text: #03A688;
+  --quiz: #2e86ab;
 }
 
 * {
@@ -203,6 +212,14 @@ html {
   max-width: 100%;
 }
 
+#header-quiz {
+  background-color: var(--quiz);
+}
+
 #header-term {
-  background-color: var(--blue);
+  background-color: var(--term);
+}
+
+#header-text {
+  background-color: var(--text);
 }
