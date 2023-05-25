@@ -14,10 +14,9 @@
 - [ ] Tutorial do jogo
 - [x] Seleção de dificuldade
 - [ ] Seleção de tema
-- [ ] Melhorar a distribuição dos elementos no desktop
+- [x] Melhorar a distribuição dos elementos no desktop
 - [x] Melhorar a distância entre os elementos no mobile
-- [ ] Fixar posições dos botões de pulo e enviar
-- [ ] Usar grid ocupando todo o espaço restante com as opções
+- [x] Alterar tamanho dos botôes de pular, responder e novo jogo.
 
 ## Term
 
@@ -31,7 +30,5 @@
 - [ ] Enviar pelo enter
 - [ ] Tutorial do jogo
 - [ ] Aplicar máscara com cor mais escura no tema escuro
-      <<<<<<< HEAD
 - [ ] # Testar teclado na APK (programmar para receber o teclado)
 - [ ] Testar teclado na APK (programmar para receber o teclado)
-  > > > > > > > 78530a3d938a9ae4b982c580abe1c5e2641a0ff7
