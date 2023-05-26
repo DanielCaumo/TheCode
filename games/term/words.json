@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name": "ADRESS",
-        "length": 6,
+        "name": "ADDRESS",
+        "length": 7,
         "definition": "(1) A number, character, or group of characters which identifies a given device or a storage location which may contain a piece of data or a program step. (2) To refer to a device or storage location by an identifying number, character, or group of characters."
     },
     {

@@ -18,11 +18,11 @@
 
 <body>
   <header>
-    <div class="header-container">
+    <div class="header-container" id="header-text">
       <nav class="left-side">
         <a href="../../index.html" class="button">
           <img src="../../assets/icons/chevron-left.svg" alt="" class="icon" />
-          <span>Voltar</span>
+          <span>Back</span>
         </a>
       </nav>
       <div>
@@ -43,30 +43,32 @@
   <main>
     <div class="game-container">
 
-        <!--numero de tentativas-->
-        <div id="container">
-          <div class="navBottom">
-            <div class="palpites" id="result">attempt...</div>
-            <div id="myNav" class="overlay">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <div class="overlay-content">
-                <div id="results" class="attempt"></div>
-              </div>
+      <!--numero de tentativas-->
+      <div id="container">
+        <div class="navBottom">
+          <div class="palpites" id="result">attempt...</div>
+          <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <div id="results" class="attempt"></div>
             </div>
-            <button class="sendButton button" onclick="openNav()"><img src="../../assets/icons/list.svg" alt=""
-                class="icon"></button>
           </div>
+          <button class="sendButton button" onclick="openNav()"><img src="../../assets/icons/list.svg" alt=""
+              class="icon"></button>
         </div>
-        <div class="win">
-          <p id="resp" class="" style="display: none;">voce acertou em</p>
-          <div id="numero" style="display: none;">0</div>
-          <p id="resposta" style="display: none;">tentivas</p>
-        </div>
-  
+      </div>
+      <div class="win">
+        <p id="resp" class="" style="display: none;">voce acertou em</p>
+        <div id="numero" style="display: none;">0</div>
+        <p id="resposta" style="display: none;">tentivas</p>
+      </div>
+
       <!--texto-->
       <div class="texto text" id="texto"> </div>
+
       <!--onde usuário ira digitar-->
       <div class="navBottom">
+        <button class="nextGame" id="nextGame" onclick="nextText()" hidden>Next Game</button>
         <input class="writeSpace" type="text" id="entrada-texto">
         <button class="sendButton" id="botao" onclick="palpite()"><img src="../../assets/icons/pen.png" alt=""
             class="icon"></button>
@@ -133,7 +135,7 @@
     <div>
       <button type="button" id="settings-close-button" class="button">
         <img src="../../assets/icons/x.svg" alt="" class="icon" />
-        <span>Fechar</span>
+        <span>Close</span>
       </button>
     </div>
   </div>
@@ -162,7 +164,7 @@
     <div>
       <button type="button" id="about-close-button" class="button">
         <img src="../../assets/icons/x.svg" alt="" class="icon" id="about-close-button" />
-        <span>Fechar</span>
+        <span>Close</span>
       </button>
     </div>
   </div>
@@ -180,8 +182,10 @@
   //A matriz é inicializada como vazia e é usada posteriormente para armazenar várias proposições.
   var allPropositions = []
 
-  var computedtext = computeText(textoOriginal)
+
+  var computedtext = computeText(textoOriginal);
   document.getElementById("texto").innerHTML = computedtext;
+
 
   document.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
@@ -189,29 +193,34 @@
     }
   });
 
+  function nextText() {
+    location.reload();
+  }
+
+  var guessedWords = []
+
   async function palpite() {
+    var message = document.getElementById("entrada-texto").value;
+    computeMessage(message);
+    if (message === "") {
+      alert('please type a word')
+      return;
+    } else if (whitelist.includes(message)) {
+      alert('already in text')
+      return;
+    } else if (guessedWords.includes(message)) {
+      alert('word already guessed')
+      return;
+    }
+    guessedWords.push(message);
+    console.log(guessedWords);
 
     var divNumero = document.getElementById("numero");
     var numeroAtual = parseInt(divNumero.innerHTML);
     var novoNumero = numeroAtual + 1;
     divNumero.innerHTML = novoNumero;
 
-    var message = document.getElementById("entrada-texto").value;
-    computeMessage(message);
-    if (message === "") {
-      alert('please type a word')
-      return;
-    }
-    try {
-      const wordExists = await checkWordExists(message);
-      if (!wordExists) {
-        return alert('palavra inexistente');
-      }
-    } catch (error) {
-      console.error(error);
-      return alert("Erro ao verificar a palavra!");
-    }
-
+    
     // Adicionar valor a div de erros
     var divErros = document.querySelector(".erros");
 
@@ -227,14 +236,18 @@
       let contador = 0;
       const palavraMinuscula = palavra.toLowerCase();
       const palavras = texto.toLowerCase().match(/\b\w+([-']\w+)*\b/g);
+      const palavrasUnicas = {};
+    
       for (let i = 0; i < palavras.length; i++) {
         if (palavras[i].toLowerCase() === palavraMinuscula && palavras[i] !== '') {
-          contador++;
+          palavrasUnicas[palavras[i]] = true;
         }
       }
+    
+      contador = Object.keys(palavrasUnicas).length;
       return contador;
-
     }
+    
 
     // Obtém a div attempt
     var divAttempt = document.querySelector(".attempt");
@@ -285,9 +298,14 @@
       for (var i = 0; i < allOccurences.length; i++) {
         allOccurences[i].classList.remove("notfound");
       }
+      var entradaTexto = document.getElementById("entrada-texto");
+      var botao = document.getElementById("botao");
       document.getElementById("numero").style.display = "block";
       document.getElementById("resp").style.display = "block";
       document.getElementById("resposta").style.display = "block";
+      document.getElementById("nextGame").style.display = "block";
+      entradaTexto.style.display = "none";
+      botao.style.display = "none";
     }
   }
 
@@ -295,10 +313,8 @@
     var alphabet = "abcdefghijklmnopqrstuvwxyz1234567890éèêçùàâœîôûïöäüë"
     var computedtext = ""
     var lines = textoOriginal.split('\n')
-    lines.shift();
-
+    //lines.shift()
     lines.unshift(answer);
-
     var begin = 0;
     var end = 0;
     var outputline = "";
@@ -318,7 +334,6 @@
                 else { outputline += "<span class=\"notfound thisisaword " + newword.latinise() + "\">" + newword + "</span>" }
               }
               newword = ""
-
             }
             outputline += lines[i][j]
           }
@@ -329,22 +344,20 @@
           newword = ""
         }
       }
-
       else {
         outputline = "";
       }
       if (i == 0) {
-        lines[i] = "<h2>" + outputline + "</h2>"
+        lines[i] = "<h2>" + outputline + "</h2> <br>"
       }
       else {
         lines[i] = "<p>" + outputline + "</p>"
       }
-
       computedtext += lines[i];
     }
-
     return computedtext
   }
+
 
 </script>
 
