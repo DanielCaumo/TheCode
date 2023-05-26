@@ -197,13 +197,23 @@
     location.reload();
   }
 
+  var guessedWords = []
+
   async function palpite() {
     var message = document.getElementById("entrada-texto").value;
     computeMessage(message);
     if (message === "") {
       alert('please type a word')
       return;
+    } else if (whitelist.includes(message)) {
+      alert('already in text')
+      return;
+    } else if (guessedWords.includes(message)) {
+      alert('word already guessed')
+      return;
     }
+    guessedWords.push(message);
+    console.log(guessedWords);
 
     var divNumero = document.getElementById("numero");
     var numeroAtual = parseInt(divNumero.innerHTML);

@@ -1,3 +1,8 @@
+screen {
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
 .news-container {
     width: 100%;
     height: 120px;
@@ -58,8 +63,9 @@
     margin: auto;
     border-radius: 12px;
     height: 400px;
-    min-width: 400px;
-    width: 400px;
+    width: 90%;
+    min-width: 300px;
+    max-width: 400px;
     display: grid;
     grid-template-rows: 3fr 2fr;
     margin-bottom: 16px;
@@ -96,9 +102,12 @@
 }
 
 .game-text {
-    height: calc(100% - 3px);
     width: calc(100% - 32px);
     padding: 16px;
+}
+
+.game-text p {
+    color: black;
 }
 
 .game-title {
@@ -113,14 +122,29 @@
     background-position: center center;
 }
 
+.gamebutton {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 12px;
+    background-color: var(--base1);
+    color: var(--text-color);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.gamebutton:hover {
+    background-color: var(--base4);
+    color: var(--yellow);
+}
+
 #CodeQuiz .game-image{background-image: url("../assets/codequizsm.jpg");}
 #CodeTerm .game-image{background-image: url("../assets/codetermsm.jpg");}
 #CodeText .game-image{background-image: url("../assets/codetext2sm.jpg");}
 
 @media (max-height: 779px) {
     screen {
-        height: calc(100vh - 80px);
-        overflow: auto;
+        overflow: scroll;
     }
     
     .games-list {
@@ -129,6 +153,7 @@
 }
 
 @media (max-width: 680px) {
+
     .news-container {
         width: 100%;
         height: 80px;
@@ -139,9 +164,5 @@
         height: 100%;
         width: 100%;
         grid-template-columns: 1fr 2fr;
-    }
-
-    .game-card {
-        width: 50%;
     }
 }
