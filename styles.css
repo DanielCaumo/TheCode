@@ -40,7 +40,7 @@
   --term: #55A63F;
   --text: #D91818; */
 
-  --term: #ffd265;
+  --term: #9664d4;
   --text: #03A688;
   --quiz: #2e86ab;
 }
@@ -52,14 +52,6 @@
 body {
   background: var(--base2);
   text-decoration: none;
-}
-
-/* Evitar Rotação */
-@media (orientation: portrait) {
-  body {
-    transform: rotate(0deg);
-    overflow: hidden;
-  }
 }
 
 /* Header */
