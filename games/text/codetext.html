@@ -232,21 +232,19 @@
     let texto = computedtext;
     let palavra = message;
 
-    function contarPalavras(texto, palavra) {
-      let contador = 0;
-      const palavraMinuscula = palavra.toLowerCase();
-      const palavras = texto.toLowerCase().match(/\b\w+([-']\w+)*\b/g);
-      const palavrasUnicas = {};
-    
-      for (let i = 0; i < palavras.length; i++) {
-        if (palavras[i].toLowerCase() === palavraMinuscula && palavras[i] !== '') {
-          palavrasUnicas[palavras[i]] = true;
-        }
-      }
-    
-      contador = Object.keys(palavrasUnicas).length;
-      return contador;
+   function contarPalavras(texto, palavra) {
+  let contador = 0;
+  const palavraMinuscula = palavra.toLowerCase();
+  const palavras = texto.toLowerCase().match(/\b\w+([-']\w+)*\b/g);
+
+  for (let i = 0; i < palavras.length; i++) {
+    if (palavras[i].toLowerCase() === palavraMinuscula && palavras[i] !== '') {
+      contador++;
     }
+  }
+  contador = contador/2;
+  return contador;
+}
     
 
     // Obtém a div attempt
