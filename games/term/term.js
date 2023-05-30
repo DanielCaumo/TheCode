@@ -520,7 +520,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 			context.strokeStyle = particle.color;
 			x = particle.x + particle.tilt;
 			context.moveTo(x + particle.diameter / 2, particle.y);
-			context.lineTo(x, particle.y + particle.tilt + particle.diameter / 2);
+			context.lineTo(x, particle.y + particle.tilt /2 + particle.diameter / 2);
 			context.stroke();
 		}
 	}
