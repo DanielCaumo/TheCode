@@ -11,13 +11,12 @@
 
 - [x] Melhorar a representação de vidas (coração cheio/ coração vazio)
 - [x] Representação da quantidade de pulos
-- [ ] Tutorial do jogo
+- [x] Tutorial do jogo
 - [x] Seleção de dificuldade
 - [ ] Seleção de tema
-- [ ] Melhorar a distribuição dos elementos no desktop
+- [x] Melhorar a distribuição dos elementos no desktop
 - [x] Melhorar a distância entre os elementos no mobile
-- [ ] Fixar posições dos botões de pulo e enviar
-- [ ] Usar grid ocupando todo o espaço restante com as opções
+- [x] Alterar tamanho dos botôes de pular, responder e novo jogo.
 
 ## Term
 
@@ -39,5 +38,3 @@
 - [ ] Tutorial do jogo
 - [ ] Aplicar máscara com cor mais escura no tema escuro
 - [ ] Testar teclado na APK (programmar para receber o teclado)
-
-
