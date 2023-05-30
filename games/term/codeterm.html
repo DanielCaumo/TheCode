@@ -18,7 +18,7 @@
   </head>
   <body>
     <header>
-      <div class="header-container">
+      <div class="header-container" id="header-term">
         <nav class="left-side">
           <a href="../../index.html" class="button">
             <img
@@ -26,7 +26,7 @@
               alt=""
               class="icon"
             />
-            <span>Voltar</span>
+            <span>Back</span>
           </a>
         </nav>
         <div>
@@ -45,40 +45,50 @@
       </div>
     </header>
 
+    <canvas id="confetti-canvas"></canvas>
     <main>
-      <div class="game-container">
-
+      <div id="game-container" class="game-container">
         <div class="score-container">
           <div class="score">
             <h4>Record</h4>
             <p id="running-record"></p>
           </div>
-          <div class="score-container-message">
-            <button id="nextGame" hidden>
-              <p>next game</p>
-            </button>
-          </div>
+          <div class="score-container-message"></div>
           <div class="score">
             <h4>Score</h4>
             <p id="running-score"></p>
           </div>
         </div>
 
-        <div class="board-container">
-        </div>
+        <div class="board-container"></div>
 
-        <div class="definition-container">
-          <h3 class="wordTitle"></h3>
-          <p class="wordDescription"></p>
-        </div>
-  
-        <div class="keyboard-container">
-  
-        </div>
+        <div class="definition-container"></div>
+
+        <div class="keyboard-container"></div>
       </div>
     </main>
 
+    <div id="modal-resultado" class="modal-resultado hidemodal">
+      <div>
+        <img src="../../assets/icons/trophyfill.svg" alt="" id="trophy" class="icon happy-icon" hidden />
+        <img src="../../assets/icons/gameover.svg" alt="" id="gameover" class="icon sad-icon" hidden />
+        <h2 class="resultStatus"></h2>
+        </svg>
+      </div>
+      <div class="wordResult">
+        <p>The word is:</p>
+        <h2 class="wordTitle"></h2>
+        <p class="wordDescription text"></p>
+      </div>
+      <div>
+        <button type="button" id="nextGame" class="button">
+          <span>Next Game</span>
+        </button>
+      </div>
+    </div>
+
     <div id="fade" class="hide"></div>
+
     <div id="settings-modal" class="hide modal">
       <div>
         <h2>Settings</h2>
@@ -115,34 +125,67 @@
       </div>
       <div>
         <h3>Number of letters</h3>
-        <form
-          id="six-options-check"
-        >
+        <form id="six-options-check">
           <label class="settings-letters">
-            <input type="checkbox" value="4" id="check4" name="letters" checked>
+            <input
+              type="checkbox"
+              value="4"
+              id="check4"
+              name="letters"
+              checked
+            />
             <span class="check-icon">4</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="5" id="check5" name="letters" checked>
+            <input
+              type="checkbox"
+              value="5"
+              id="check5"
+              name="letters"
+              checked
+            />
             <span class="check-icon">5</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="6" id="check6" name="letters" checked>
+            <input
+              type="checkbox"
+              value="6"
+              id="check6"
+              name="letters"
+              checked
+            />
             <span class="check-icon">6</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="7" id="check7" name="letters" checked>
+            <input
+              type="checkbox"
+              value="7"
+              id="check7"
+              name="letters"
+              checked
+            />
             <span class="check-icon">7</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="8" id="check8" name="letters" checked>
+            <input
+              type="checkbox"
+              value="8"
+              id="check8"
+              name="letters"
+              checked
+            />
             <span class="check-icon">8</span>
           </label>
           <label class="settings-letters">
-            <input type="checkbox" value="9" id="check9" name="letters" checked>
+            <input
+              type="checkbox"
+              value="9"
+              id="check9"
+              name="letters"
+              checked
+            />
             <span class="check-icon">9</span>
           </label>
-
         </form>
       </div>
       <div>
@@ -189,7 +232,7 @@
       <div>
         <button type="button" id="settings-close-button" class="button">
           <img src="../../assets/icons/x.svg" alt="" class="icon" />
-          <span>Fechar</span>
+          <span>Close</span>
         </button>
       </div>
     </div>
@@ -202,7 +245,9 @@
           <h3>Rules</h3>
           <ul class="rules">
             <li>Guess the secret word of a chosen length within 6 attempts.</li>
-            <li>Feedback is provided after each guess with red and white pegs.</li>
+            <li>
+              Feedback is provided after each guess with red and white pegs.
+            </li>
             <li>Choose the word length using settings.</li>
           </ul>
           <h3>Feedbacks</h3>
@@ -212,7 +257,7 @@
                 <div>A</div>
                 <div>G</div>
                 <div>I</div>
-                <div style="background-color: var(--base4);">L</div>
+                <div style="background-color: var(--base4)">L</div>
                 <div>E</div>
               </div>
               <p>L is not in the word in any spot</p>
@@ -223,7 +268,7 @@
                 <div>T</div>
                 <div>A</div>
                 <div>C</div>
-                <div style="background-color: var(--yellow);">K</div>
+                <div style="background-color: var(--yellow)">K</div>
               </div>
               <p>K is in the word but in the wrong spot.</p>
             </li>
@@ -231,7 +276,7 @@
               <div class="howtoplayrow">
                 <div>P</div>
                 <div>R</div>
-                <div style="background-color: var(--green);">O</div>
+                <div style="background-color: var(--green)">O</div>
                 <div>X</div>
                 <div>Y</div>
               </div>
@@ -248,7 +293,7 @@
             class="icon"
             id="about-close-button"
           />
-          <span>Fechar</span>
+          <span>Close</span>
         </button>
       </div>
     </div>

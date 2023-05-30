@@ -110,7 +110,7 @@
     },
     {
       "id": 145,
-      "name": "RISKS",
+      "name": "RISK",
       "length": 4,
       "definition": "Risks refers to the potential for loss or harm to occur as a result of uncertainty in a project. Risk is a inherent part of any project, and can arise from a variety of sources, such as technical complexity, external factors, budget constraints, and more. Effective risk management involves identifying, assessing, and prioritizing risks, and then implementing strategies to mitigate or minimize their potential impact on the project."
     },
@@ -419,12 +419,6 @@
   ],
   "6": [
     {
-      "id": 1,
-      "name": "ADRESS",
-      "length": 6,
-      "definition": "(1) A number, character, or group of characters which identifies a given device or a storage location which may contain a piece of data or a program step. (2) To refer to a device or storage location by an identifying number, character, or group of characters."
-    },
-    {
       "id": 18,
       "name": "BINARY",
       "length": 6,
@@ -726,6 +720,12 @@
     }
   ],
   "7": [
+    {
+      "id": 1,
+      "name": "ADDRESS",
+      "length": 7,
+      "definition": "(1) A number, character, or group of characters which identifies a given device or a storage location which may contain a piece of data or a program step. (2) To refer to a device or storage location by an identifying number, character, or group of characters."
+    },
     {
       "id": 3,
       "name": "ANOMOLY",

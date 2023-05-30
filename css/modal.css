@@ -180,12 +180,15 @@ input[type='radio']:checked + label {
   transition: 0.3s;
 }
 
-.modal-text {
-  grid-row: span 4;
-}
-
 .modal-text-container {
   height: calc(100% - 24px);
   width: calc(100% - 24px);
   padding: 12px;
+}
+
+@media (max-height: 779px) {
+  #settings-modal,
+  #about-modal {
+    height: 550px;
+  }
 }
