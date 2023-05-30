@@ -146,18 +146,7 @@
     <div class="modal-text">
       <div class="modal-text-container">
         <p class="text">
-          <strong>TheCode</strong> is a collection of games inspired by other
-          popular ones like Wordle, Redactle, and Quiz, but with a focus on
-          the programming universe to help students assimilate essential terms
-          and subjects. This application was developed by
-          <a href="https://github.com/DanielCaumo/" target="_blank">Daniel Caumo</a>,
-          <a href="https://github.com/gabriel-lima-b" target="_blank">Gabriel Lima</a>
-          e
-          <a href="https://github.com/TiagoCassol" target="_blank">Tiago Cassol</a>
-          under the guidance of Professor Claudio Roberto Silva Alves sing the
-          mobile-first concept and usability for the Graphical Interface
-          Development for Mobile Devices discipline of the Technical Course in
-          Systems Development at Senac-RS.
+          <strong>Redactle</strong>  is a word guessing game where you will redact an article on Wikipedia with all the words hidden.
         </p>
       </div>
     </div>
@@ -279,6 +268,7 @@
 
       for (var i = 0; i < allOccurences.length; i++) {
         allOccurences[i].classList.remove("notfound");
+        allOccurences[i].classList.add("animate-color");
       }
       if (!document.getElementById("texto").innerHTML.toLowerCase().split("</h1>")[0].includes("notfound")) {
         found = true;
