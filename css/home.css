@@ -50,7 +50,7 @@ screen {
 }
 
 .games-title h2 {
-    color: var(--green);
+    color: var(--text-color);
 }
 
 .games-list {
